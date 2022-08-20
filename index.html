@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoActions</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="http://fonts.cdnfonts.com/css/roboto" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div class="banner-header">
+      <div class="user-notification">
+        <i class="fas fa-user"></i>
+        <span class="notification">0</span>
+      </div>
+      <div class="intro-steps">
+        <h1></h1>
+      </div>
+    </div>
+    
+    <div class="modal-container">
+      <div class="overlay modal-trigger"></div>
+      <div class="modal">
+        <button class="close-modal modal-trigger">x</button>
+        <h1>Contenu</h1>
+        <div class="informations">
+          <p>Meat is responsible for 14.5% of global greenhouse gas emissions</p>
+          <p>Meat is responsible for deforestation of the Amazon rainforest</p>
+          <p>Meat is responsible for excessive water usage</p>
+        </div>
+        <div class="links">
+          <h3>Usefull Links</h3>
+          <hr>
+          <ul>
+            <li>
+              <a href="https://www.greenpeace.org.uk/news/why-meat-is-bad-for-the-environment/" target="_blank">Impact of meat on the environment</a>
+              (Greenpeace UK) <br> 
+              <i class='fas fa-stopwatch'></i>2 mins
+            </li>
+            <li>
+              <a href="https://www.bbcgoodfood.com/recipes/collection/quick-veggie-recipes" target="_blank">Quick vegetarian recipes</a>
+              (BBC goodfood) <br> 
+            </li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="content">
+
+      <div class="intro-text">
+        <img src="earth.png" alt="">
+        <p>Climate change is already affecting all of us. North of Europe have faced unseen floods in 2021. One year later, drought and wildfires occured in Europe and in the United States. Climate change has consequences on all forms of life on earth : animals, plants, ecosystem.</p>
+        <p>Climate change is also directly threatening societies : emerging of zoonotic deseases, mortality due to extreme weather events, deseases due to air quality, possibility of a conflit for ressources...</p>
+        <p>The bad news is that climate change causes changes faster than we expected. The good news is that if enough people make small actions, this can have a big impact on our ecosystem.</p>
+        <p><span class="one">We have only one earth.</span> The sooner we act, the more we will be able to change things. There are a lot easy actions we can undertake, without changing much about our life. Let's start now.</p>        
+      </div>
+      <div class="box">
+        <div class="earth-consumption">
+          <div class="info-consumption">
+            <p>If everybody lived as Europeans, we would need <span id="number-planets">0</span> planets.</p>
+            <p>Let's change this with simple actions.</p>
+          </div>
+          <div class="earths">
+            <img src="earth.png" alt="">
+            <img src="earth.png" alt="">
+            <img src="earth.png" alt="">
+            <img src="earth.png" alt="">
+            <img src="earth.png" alt="">
+          </div>
+        </div>
+      </div>
+
+
+      <div class="content-title">
+        <div class="challenge-title">
+          <h1>Pick up a challenge</h1>
+          <div class="radio-buttons">
+            <label class="rad-label none">
+              <input type="radio" class="rad-input" name="rad" checked>
+              <div class="rad-design none"></div>
+              <div class="rad-text">none</div>
+            </label>
+            <label class="rad-label easy">
+              <input type="radio" class="rad-input" name="rad">
+              <div class="rad-design easy"></div>
+              <div class="rad-text">easy</div>
+            </label>
+          
+            <label class="rad-label medium">
+              <input type="radio" class="rad-input" name="rad">
+              <div class="rad-design medium"></div>
+              <div class="rad-text">medium</div>
+            </label>
+          
+            <label class="rad-label hard">
+              <input type="radio" class="rad-input" name="rad">
+              <div class="rad-design hard"></div>
+              <div class="rad-text">hard</div>
+            </label>
+          </div>
+        </div>
+
+        <div class="info-challenges">
+          <p>Each card represents a challenge you can follow with solutions in a particular domain.</p>
+
+          
+          <div class="toggler">
+            <label class="toggler-wrapper style-8">
+              <input type="checkbox">
+              <div class="toggler-slider">
+                <div class="toggler-knob"></div>
+              </div>
+            </label>
+            <p id="my-challenges">My Challenges</p>
+          </div>
+        </div>
+        
+        
+
+      </div>
+
+      <div class="card-container">
+        <div class="no-challenge">
+          <p>You don't have any challenge yet. Pick up one !</p>
+        </div>
+        
+
+      </div>
+
+
+
+      <div class="pagination">
+        
+      </div>
+    </div>
+
+    <div class="footer">
+      <!-- <img src="nature.jpg" alt=""> -->
+      <div class="carousel-container">
+        <div class="carousel">
+          <div class="slider">
+            <div class="text">
+              <h2>This year, Earth Overshoot Day fell on July 28</h2>
+              <p>Earth Overshoot Day marks the date when humanity has used all the biological resources that Earth regenerates during the entire year.</p>
+              <div class="source">
+                <a href="https://www.overshootday.org" target="_blank">Source: https://www.overshootday.org</a>
+              </div>
+            </div>
+            <div class="text">
+              <h2>Content 2</h2>
+              <p>Earth Overshoot Day marks the date when humanity has used all the biological resources that Earth regenerates during the entire year.</p>
+              <div class="source">
+                <a href="https://www.overshootday.org" target="_blank">Source: https://www.overshootday.org</a>
+              </div>
+            </div>
+            <div class="text">
+              <h2>Content 3</h2>
+              <p>Earth Overshoot Day marks the date when humanity has used all the biological resources that Earth regenerates during the entire year.</p>
+              <div class="source">
+                <a href="https://www.overshootday.org" target="_blank">Source: https://www.overshootday.org</a>
+              </div>
+            </div>
+          </div>
+          <div class="controls">
+            <i class="fa-solid fa-angle-left control"></i>
+            <i class="fa-solid fa-angle-right control"></i>
+            <div class="bullets control">
+              <span class="active" id="0"></span>
+              <span id="1"></span>
+              <span id="2"></span> 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="notification-banner">
+      <i class="start-icon far fa-check-circle faa-tada animated"></i>
+      <p><span class="success">Challenge accepted!</span> Awesome!</p>
+    </div>
+
+  </div>
+  
+  
+  
+  <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+  <script src="eco.js"></script>
+</body>
+</html>
