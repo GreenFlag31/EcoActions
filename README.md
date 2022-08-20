@@ -1,7 +1,7 @@
 ## EcoActions
 EcoActions is a single page project about ecology, targetting individual daily actions for the climate. 
 
-![alt text](https://github.com/GreenFlag31/EcoActions/description.png?raw=true)
+![alt text](https://github.com/GreenFlag31/EcoActions/blob/main/description.png?raw=true)
 
 ✅ HTML, CSS, JS  
 ✅ Modern CSS technologies used such as Grid, Flexbox  
