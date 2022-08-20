@@ -5,7 +5,7 @@ EcoActions is a single page project about ecology, targetting individual daily a
 
 ✅ HTML, CSS, JS  
 ✅ Modern CSS technologies used such as Grid, Flexbox  
-✅ Modern page layout with animations
+✅ Modern page layout with animations  
 ✅ Responsive content  
 ✅ Home-made design  
 ✅ Home-made pagination and infinite footer slider carousel  
