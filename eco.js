@@ -230,7 +230,6 @@ function ToggleChallenges() {
     category = undefined
   }
   FirstPageSelectedifCategoryChanged()
-  document.querySelector(".rad-label.none").focus()
   radLabelNoneInput.checked = true
 }
 
