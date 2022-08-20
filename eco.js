@@ -148,11 +148,13 @@ addCard("hard", "mobility", "travel-local.jpg", "Only Travel local", "Only trave
 const contentTitle = document.querySelector('.content-title') 
 const changeWords = document.querySelector(".info-consumption p:nth-child(2)")
 const box = document.querySelector(".box")
-const threshold = 0.7
+
+const threshold = .7
 const options = {
   threshold
 }
-function makeVisible(entries, observer) {
+
+function makeVisible (entries, observer) {
   entries.forEach(entry => {
     if (entry.intersectionRatio > threshold) {
       box.classList.add("active")
@@ -160,7 +162,7 @@ function makeVisible(entries, observer) {
       document.querySelector(".earths").classList.add("active")
       setTimeout(() => changeWords.classList.add("active"), 3600)
       observer.unobserve(entry.target)
-    } 
+    }
   })
 }
 const observer = new IntersectionObserver(makeVisible, options)
@@ -231,9 +233,6 @@ function ToggleChallenges() {
   document.querySelector(".rad-label.none").focus()
   radLabelNoneInput.checked = true
 }
-
-// Add background to none category by default
-document.querySelector(".rad-label.none").focus()
 
 
 function uncheckedChallenge() {
@@ -721,7 +720,7 @@ function ResizingPagination() {
     allLinks[currentPage - 1].classList.add("active")
   }
 }
-ResizingPagination()
+// ResizingPagination()
 
 // Adding a debounce to limit the number of calls
 window.addEventListener('resize', Debounce(ResizingPagination, 300))
@@ -746,3 +745,5 @@ function Debounce(fn, delay) {
       timer = setTimeout(() => fn.apply(this, args), delay);
   }
 }
+
+
