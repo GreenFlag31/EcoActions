@@ -184,9 +184,9 @@ function animation() {
   if (intNumberPlanets === 28) {
     return stop(interval)
   } else if (intNumberPlanets > 26) {
-    changeTimer(450)
+    changeTimer(350)
   } else if (intNumberPlanets > 24) {
-    changeTimer(300)
+    changeTimer(200)
   }
   interval = setInterval(animation, timing)
 }
