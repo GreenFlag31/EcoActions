@@ -12,5 +12,6 @@ EcoActions is a single page project about ecology, targetting individual daily a
 ✅ Dynamical pagination responsive on resize, updating the number of items displayed, keep selected page  
 ✅ Optimised Javascript code respecting the DRY principle  
 ✅ Adding new challenges made fast and easy  
+✅ Informations stored using LocalStorage    
 
 
