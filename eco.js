@@ -118,23 +118,6 @@ addCard("easy", "mobility", "travel-local.jpg", "Travel Local", "Change your far
 addCard("easy", "energy", "electronics.jpg", "Buy energy efficient Electronics", "Buy energy efficiency electronics", "Buy second-hand electronics")
 
 
-addCard("easy", "food", "meat2.jpg", "Reduce meat consumption", "Replace animal proteins", "Lentils, Tofu, Seitan", "More Info")
-addCard("easy", "mobility", "drive.jpg", "Drive smoothly", "Throttle progressively", "Anticipate slows down")
-addCard("easy", "energy", "electricity.jpg", "Reduce power use", "Turn off / unplug electronics you don't use", "Use multisockets to easily unplug several electronics")
-addCard("easy", "mobility", "travel-local.jpg", "Travel Local", "Change your far-from-home next holiday by a local travel", "If you still want to travel far from home, stay longer and less often")
-addCard("easy", "energy", "electronics.jpg", "Buy energy efficient Electronics", "Buy energy efficiency electronics", "Buy second-hand electronics")
-addCard("easy", "food", "meat2.jpg", "Reduce meat consumption", "Replace animal proteins", "Lentils, Tofu, Seitan", "More Info")
-addCard("easy", "mobility", "drive.jpg", "Drive smoothly", "Throttle progressively", "Anticipate slows down")
-addCard("easy", "energy", "electricity.jpg", "Reduce power use", "Turn off / unplug electronics you don't use", "Use multisockets to easily unplug several electronics")
-addCard("easy", "mobility", "travel-local.jpg", "Travel Local", "Change your far-from-home next holiday by a local travel", "If you still want to travel far from home, stay longer and less often")
-addCard("easy", "energy", "electronics.jpg", "Buy energy efficient Electronics", "Buy energy efficiency electronics", "Buy second-hand electronics")
-addCard("easy", "food", "meat2.jpg", "Reduce meat consumption", "Replace animal proteins", "Lentils, Tofu, Seitan", "More Info")
-addCard("easy", "mobility", "drive.jpg", "Drive smoothly", "Throttle progressively", "Anticipate slows down")
-addCard("easy", "energy", "electricity.jpg", "Reduce power use", "Turn off / unplug electronics you don't use", "Use multisockets to easily unplug several electronics")
-addCard("easy", "mobility", "travel-local.jpg", "Travel Local", "Change your far-from-home next holiday by a local travel", "If you still want to travel far from home, stay longer and less often")
-addCard("easy", "energy", "electronics.jpg", "Buy energy efficient Electronics", "Target energy efficiency electronics", "Buy second-hand electronics")
-
-
 
 
 addCard("medium", "mobility", "drive.jpg", "Share your car", "Find an application of car sharing or visit car sharing websites to organise car sharing")
@@ -144,7 +127,7 @@ addCard("medium", "food", "eatlocal.jpg", "Eat locally", "Find online local prod
 addCard("hard", "mobility", "travel-local.jpg", "Only Travel local", "Only travel in your country or a neightboor country", "Take the public transport / car sharing to travel local")
 
 
-// Using IntersectionObserver to make visible the second paragraph
+// Using IntersectionObserver to make the second paragraph visible
 const contentTitle = document.querySelector('.content-title') 
 const changeWords = document.querySelector(".info-consumption p:nth-child(2)")
 const box = document.querySelector(".box")
@@ -571,7 +554,8 @@ function GoTo(page) {
   if (page <= 1) {
     for (let i = 0; i < cardsWrapper.length; i++) {
       // if a card does not belong to "category" or "personal" that were selected
-      if (!CheckCurrentItemConditions(i)) return
+      if (category && !BelongsToSameCategory(i)) return
+      if (checkedmyChallenges.checked && !BelongsToPersonalChallenges(i)) return
 
       if (i < ITEMS_PER_PAGE) {
         DisplayItems(cardsWrapper[i], "show", "hidden")
@@ -582,7 +566,8 @@ function GoTo(page) {
   } else if (page >= Math.ceil(cardsWrapper.length / ITEMS_PER_PAGE)) {
     // last page
     for (let i = 0; i < cardsWrapper.length; i++) {
-      if (!CheckCurrentItemConditions(i)) return
+      if (category && !BelongsToSameCategory(i)) return
+      if (checkedmyChallenges.checked && !BelongsToPersonalChallenges(i)) return
 
       if (i < cardsWrapper.length - (cardsWrapper.length % ITEMS_PER_PAGE)) {
         DisplayItems(cardsWrapper[i], "hidden", "show")
@@ -619,9 +604,11 @@ function GoTo(page) {
 }
 
 
-function CheckCurrentItemConditions(i) {
-  return (category && cardsWrapper[i].querySelector(".card").classList.contains(category)) || 
-  (checkedmyChallenges.checked && cardsWrapper[i].querySelector(".card").parentNode.classList.contains("personal"))
+function BelongsToSameCategory(i) {
+  return cardsWrapper[i].querySelector(".card").classList.contains(category)
+}
+function BelongsToPersonalChallenges(i) {
+  return cardsWrapper[i].querySelector(".card").parentNode.classList.contains("personal")
 }
 
 function RemoveActiveItem(cardsWrapperShow) {
