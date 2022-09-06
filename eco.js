@@ -116,6 +116,8 @@ addCard("easy", "mobility", "drive.jpg", "Drive smoothly", "Throttle progressive
 addCard("easy", "energy", "electricity.jpg", "Reduce power use", "Turn off / unplug electronics you don't use", "Use multisockets to easily unplug several electronics")
 addCard("easy", "mobility", "travel-local.jpg", "Travel Local", "Change your far-from-home next holiday by a local travel", "If you still want to travel far from home, stay longer and less often")
 addCard("easy", "energy", "electronics.jpg", "Buy energy efficient Electronics", "Buy energy efficiency electronics", "Buy second-hand electronics")
+addCard("easy", "food", "food-waste.jpg", "Reduce food waste", "Try to plan your purchases", "Find on the net recipes with the rest of the fridge")
+addCard("easy", "energy", "water-usage.jpg", "Reduce water usage", "Take a shower instead of a bath or take shorter shower", "Install flow restrictors")
 
 
 
@@ -243,11 +245,12 @@ function DisplayPersonalChallenges() {
 
   category = "personal"
   ResetAnimation(personalChallenges)
-  DisplayCorrectNofPages(localStorage.length)
-
+  
   personalChallenges.forEach(challenge => {
     DisplayItems(challenge, "personal", "hidden")
   })
+
+  DisplayCorrectNofPages(localStorage.length - 1)
 }
 
 
@@ -288,7 +291,7 @@ function DisplayItems(element, ClassToAdd, ClassToRemove) {
   element.classList.remove(ClassToRemove)
 }
 
-// Select the category (4)
+// Select a category (4)
 const radLabelNone = document.querySelector(".rad-label.none input")
 radLabelNone.addEventListener("click", () => {
 
@@ -554,7 +557,7 @@ function GoTo(page) {
   if (page <= 1) {
     for (let i = 0; i < cardsWrapper.length; i++) {
       // if a card does not belong to "category" or "personal" that were selected
-      if (category && !BelongsToSameCategory(i)) return
+      if (category && category !== "personal" && !BelongsToSameCategory(i)) return
       if (checkedmyChallenges.checked && !BelongsToPersonalChallenges(i)) return
 
       if (i < ITEMS_PER_PAGE) {
@@ -566,7 +569,7 @@ function GoTo(page) {
   } else if (page >= Math.ceil(cardsWrapper.length / ITEMS_PER_PAGE)) {
     // last page
     for (let i = 0; i < cardsWrapper.length; i++) {
-      if (category && !BelongsToSameCategory(i)) return
+      if (category && category !== "personal" && !BelongsToSameCategory(i)) return
       if (checkedmyChallenges.checked && !BelongsToPersonalChallenges(i)) return
 
       if (i < cardsWrapper.length - (cardsWrapper.length % ITEMS_PER_PAGE)) {
@@ -685,7 +688,7 @@ function ResizingPagination() {
 
   // category selected or personal challenges ?
   const totalPages = document.querySelectorAll(".card."+ category).length
-  || (checkedmyChallenges.checked ? localStorage.length : cardsWrapper.length)
+  || (checkedmyChallenges.checked ? localStorage.length - 1 : cardsWrapper.length)
 
   const currentActive = pagination.querySelector("a.active")
   currentPage = Number.parseInt(currentActive.textContent)
@@ -734,3 +737,4 @@ function Debounce(fn, delay) {
 }
 
 
+console.info("%cIf you have any question / suggestion regarding this project, feel free to ask me : unam31@gmail.com", "color: #1fd12e")
