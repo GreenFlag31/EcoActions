@@ -301,6 +301,7 @@ function ChangeTextToFollowed(currentItem) {
 
 function DisplayItems(element, ClassToAdd, ClassToRemove) {
   element.classList.add(ClassToAdd)
+  element.offsetHeight
   element.classList.remove(ClassToRemove)
 }
 
