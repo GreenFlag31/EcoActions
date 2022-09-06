@@ -619,8 +619,8 @@ function GoTo(page) {
 
 
 function CheckCurrentItemConditions(i) {
-  return !(category && !cardsWrapper[i].querySelector(".card").classList.contains(category)) || 
-  !(checkedmyChallenges.checked && !cardsWrapper[i].querySelector(".card").parentNode.classList.contains("personal"))
+  return (category && cardsWrapper[i].querySelector(".card").classList.contains(category)) || 
+  (checkedmyChallenges.checked && cardsWrapper[i].querySelector(".card").parentNode.classList.contains("personal"))
 }
 
 function RemoveActiveItem(cardsWrapperShow) {
@@ -697,7 +697,7 @@ function ResizingPagination() {
 
   // category selected or personal challenges ?
   const totalPages = document.querySelectorAll(".card."+ category).length
-  || checkedmyChallenges.checked ? localStorage.length : cardsWrapper.length
+  || (checkedmyChallenges.checked ? localStorage.length : cardsWrapper.length)
 
   const currentActive = pagination.querySelector("a.active")
   currentPage = Number.parseInt(currentActive.textContent)
